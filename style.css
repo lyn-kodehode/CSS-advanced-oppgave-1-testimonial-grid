@@ -195,4 +195,7 @@ img {
       "testimonial-4"
       "testimonial-5";
   }
+  .testimonial-1 {
+    background-image: none;
+  }
 }
