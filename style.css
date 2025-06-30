@@ -23,10 +23,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: var(--neutral-grey-100);
+}
 p {
   font-family: var(--font-family);
   font-size: var(--font-body-size);
-  font-weight: var(--font-weight-500);
+  /* font-weight: var(--font-weight-500); */
 }
 .testimonials {
   height: 100svh;
@@ -71,14 +74,15 @@ p {
 }
 .testimonial-3 {
   grid-area: testimonial-3;
+  background-color: var(--neutral-white);
 }
 .title-3,
 .body-3 {
-  color: var(--neutral-grey-200);
+  color: var(--neutral-grey-400);
 }
 .name-3,
 .highlight-3 {
-  color: var(--neutral-grey-400);
+  color: var(--neutral-grey-500);
 }
 .testimonial-4 {
   grid-area: testimonial-4;
@@ -95,17 +99,21 @@ p {
 }
 .testimonial-5 {
   grid-area: testimonial-5;
+  background-color: var(--neutral-white);
 }
 .title-5,
 .body-5 {
-  color: var(--neutral-grey-200);
+  color: var(--neutral-grey-400);
 }
 .name-5,
 .highlight-5 {
-  color: var(--neutral-grey-400);
+  color: var(--neutral-grey-500);
 }
 .testimonial {
-  border: 1px solid black;
+  /* border: 1px solid var(--neutral-grey-100); */
+  border-radius: 0.5em;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3); */
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 10px 0 rgba(0, 0, 0, 0.2);
   display: grid;
   gap: 1.5rem;
   padding: 2rem;
@@ -152,6 +160,17 @@ img {
 .text-body-5 {
   line-height: 2;
 }
+@media (max-width: 1200px) {
+  .testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "testimonial-1 testimonial-1 testimonial-2"
+      "testimonial-3 testimonial-4 testimonial-4"
+      "testimonial-5 testimonial-5 testimonial-5";
+  }
+}
 @media (max-width: 900px) {
   .testimonials-container {
     display: grid;
@@ -164,7 +183,7 @@ img {
       "testimonial-5 testimonial-5";
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .testimonials-container {
     display: grid;
     grid-template-columns: 1fr;
