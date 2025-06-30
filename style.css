@@ -1,0 +1,179 @@
+/* >600px,  601px, 760px, 992px, 1200px BREAKPOINTSx */
+/* Mobile:  375px, 1 column*/
+/* Desktop: 1440px, 4 koloner */
+
+:root {
+  --primary-purple-50: hsl(260, 100%, 95%);
+  --primary-purple-300: hsl(264, 82%, 80%);
+  --primary-purple-500: hsl(263, 55%, 52%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-grey-100: hsl(214, 17%, 92%);
+  --neutral-grey-200: hsl(0, 0%, 81%);
+  --neutral-grey-400: hsl(224, 10%, 45%);
+  --neutral-grey-500: hsl(217, 19%, 35%);
+  --neutral-dark-blue: hsl(219, 29%, 14%);
+  --neutral-black: hsl(0, 0%, 7%);
+  --font-body-size: 13px;
+  --font-family: "Barlow Semi Condensed", sans-serif;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p {
+  font-family: var(--font-family);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-weight-500);
+}
+.testimonials {
+  height: 100svh;
+  width: 100%;
+}
+.testimonials-container {
+  margin: 2rem;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+  grid-template-areas:
+    "testimonial-1 testimonial-1 testimonial-2 testimonial-5"
+    "testimonial-3 testimonial-4 testimonial-4 testimonial-5";
+}
+.testimonial-1 {
+  grid-area: testimonial-1;
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: 80% 0%;
+  background-color: var(--primary-purple-500);
+}
+.title-1,
+.body-1 {
+  color: var(--primary-purple-300);
+}
+.name-1,
+.highlight-1 {
+  color: var(--primary-purple-50);
+}
+.testimonial-2 {
+  grid-area: testimonial-2;
+  background-color: var(--neutral-grey-500);
+}
+.title-2,
+.body-2 {
+  color: var(--neutral-grey-200);
+}
+.name-2,
+.highlight-2 {
+  color: var(--neutral-white);
+}
+.testimonial-3 {
+  grid-area: testimonial-3;
+}
+.title-3,
+.body-3 {
+  color: var(--neutral-grey-200);
+}
+.name-3,
+.highlight-3 {
+  color: var(--neutral-grey-400);
+}
+.testimonial-4 {
+  grid-area: testimonial-4;
+  background-color: var(--neutral-black);
+}
+.title-4,
+.body-4 {
+  color: var(--neutral-grey-400);
+}
+.name-4,
+.highlight-4 {
+  /* color: var(--neutral-white); */
+  color: var(--neutral-grey-200);
+}
+.testimonial-5 {
+  grid-area: testimonial-5;
+}
+.title-5,
+.body-5 {
+  color: var(--neutral-grey-200);
+}
+.name-5,
+.highlight-5 {
+  color: var(--neutral-grey-400);
+}
+.testimonial {
+  border: 1px solid black;
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+  grid-template-columns: repeat(2, fit-content);
+  /* grid-template-rows: repeat(3, fit-content(56px)); */
+  grid-template-rows: repeat(3, fit-content);
+  grid-template-areas:
+    "header-container header-container"
+    "text-highlight text-highlight"
+    "text-body text-body";
+}
+img {
+  grid-area: img;
+  border-radius: 50%;
+  height: 35px;
+}
+.text-name {
+  /* grid-area: text-name; */
+  font-weight: var(--font-weight-600);
+  font-size: 1rem;
+}
+.text-highlight {
+  grid-area: text-highlight;
+  font-weight: var(--font-weight-600);
+  font-size: 1.5rem;
+}
+.text-body {
+  grid-area: text-body;
+  line-height: 1.6;
+}
+/* .text-title{} */
+.header-container {
+  width: 100%;
+  display: grid;
+  place-content: ;
+  column-gap: 0.25rem;
+  grid-template-columns: repeat(2, fit-content);
+  /* grid-template-columns: 56px; */
+  grid-template-rows: repeat(2, fit-content);
+  grid-template-areas:
+    "img text-name"
+    "img text-verified";
+}
+.text-body-5 {
+  line-height: 2;
+}
+@media (max-width: 900px) {
+  .testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, fit-content(500px));
+    grid-template-areas:
+      "testimonial-1 testimonial-1"
+      "testimonial-2 testimonial-3"
+      "testimonial-4 testimonial-4"
+      "testimonial-5 testimonial-5";
+  }
+}
+@media (max-width: 500px) {
+  .testimonials-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, fit-content(500px));
+    grid-template-areas:
+      "testimonial-1"
+      "testimonial-2"
+      "testimonial-3"
+      "testimonial-4"
+      "testimonial-5";
+  }
+}
